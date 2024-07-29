@@ -16,12 +16,17 @@ $result = $mysqli->query("SELECT * FROM `employees`");
 </head>
 <body>
 <h1>Список сотрудников</h1>
-<?php foreach ($result as $item): ?>
-<p>Имя: <?= ($item['name']) ?></p>
-<p>Фамилия: <?= ($item['surname']) ?></p>
-<p>Должность: <?= ($item['position']) ?></p>
-<p>Зарплата: <?= ($item['salary']) ?></p>
-    <hr>
-<?php endforeach; ?>
+<ul>
+    <?php foreach ($result as $item): ?>
+        <li style="list-style-type: none">
+            <p>Имя: <?= ($item['name']) ?></p>
+            <p>Фамилия: <?= ($item['surname']) ?></p>
+            <p>Должность: <?= ($item['position']) ?></p>
+            <p>Зарплата: <?= ($item['salary']) ?></p>
+            <hr>
+        </li>
+    <?php endforeach; ?>
+</ul>
+
 </body>
 </html>
