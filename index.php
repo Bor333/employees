@@ -21,21 +21,21 @@ $result = $mysqli->query("SELECT * FROM `employees`");
 <ul>
     <?php foreach ($result as $item): ?>
         <li style="list-style-type: none">
-            <p>Имя: <?= ($item['name']) ?></p>
-            <p>Фамилия: <?= ($item['surname']) ?></p>
+            <h3><?= ($item['name']) ?> <?= ($item['surname']) ?></h3>
             <p>Должность: <?= ($item['position']) ?></p>
             <p>Зарплата: <?= ($item['salary']) ?></p>
-            <hr>
         </li>
+        <button>Изменить данные сотрудника</button>
+        <button>Уволить сотрудника</button>
     <?php endforeach; ?>
 </ul>
 <h3>Нанять сотрудника</h3>
 <form method="post" enctype="multipart/form-data">
-    <p>Имя: <input type="text" id="add-name"></p>
-    <p>Фамилия: <input type="text" id="add-surname"></p>
-    <p>Должность: <input type="text" id="add-position"></p>
-    <p>Зарплата: <input type="text" id="add-salary"></p>
-    <input type="submit" id="add">
+    <input type="text" id="add-name"> имя<br><br>
+    <input type="text" id="add-surname"> фамилия<br><br>
+    <input type="text" id="add-position"> должность<br><br>
+    <input type="text" id="add-salary"> зарплата<br><br>
+    <input type="submit" id="add" value="Нанять">
 </form>
 </body>
 </html>
