@@ -15,6 +15,7 @@ $result = $mysqli->query("SELECT * FROM `employees`");
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Трудоустройство</title>
     <script src="ajax.js" defer></script>
+    <script src="delete.js" defer></script>
 </head>
 <body>
 <h1>Список сотрудников</h1>
@@ -25,8 +26,17 @@ $result = $mysqli->query("SELECT * FROM `employees`");
             <p>Должность: <?= ($item['position']) ?></p>
             <p>Зарплата: <?= ($item['salary']) ?></p>
         </li>
-        <button>Изменить данные сотрудника</button>
-        <button>Уволить сотрудника</button>
+        <form method="post" enctype="multipart/form-data">
+            <input hidden type="text" class="update-name">
+            <input hidden type="text" class="update-surname">
+            <input hidden type="text" class="update-position">
+            <input hidden type="text" class="update-salary">
+            <input type="submit" class="update" value="Внести правки">
+        </form>
+        <br>
+        <form method="post" enctype="multipart/form-data">
+            <input type="submit" class="delete" value="Уволить" data-id="<?= ($item['id']) ?>">
+        </form>
     <?php endforeach; ?>
 </ul>
 <h3>Нанять сотрудника</h3>
