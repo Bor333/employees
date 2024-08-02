@@ -17,9 +17,9 @@ deleteButtonArr.forEach((deleteButton) => {
                         id: id
                     }), // body data type must match "Content-Type" header
                 });
-                // const answer = await response.json();
-                //
-                //  console.log(answer);
+                const answer = await response.json();
+
+                 console.log(answer);
             })();
         }
     }

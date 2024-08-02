@@ -28,6 +28,5 @@ addButton.onclick = function (event) {
             <p>Зарплата: ${answer.salary}</p>
         </li>`
          document.querySelector("ul").insertAdjacentHTML("beforeend", newTitle);
-
     })();
 }
