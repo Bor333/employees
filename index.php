@@ -41,10 +41,10 @@ $result = $mysqli->query("SELECT * FROM `employees`");
 </ul>
 <h3>Нанять сотрудника</h3>
 <form method="post" enctype="multipart/form-data">
-    <input type="text" id="add-name"> имя<br><br>
-    <input type="text" id="add-surname"> фамилия<br><br>
-    <input type="text" id="add-position"> должность<br><br>
-    <input type="text" id="add-salary"> зарплата<br><br>
+    <input type="text" id="add-name" value="Борис"> имя<br><br>
+    <input type="text" id="add-surname" value="Шайблер"> фамилия<br><br>
+    <input type="text" id="add-position" value="PHP разработчик"> должность<br><br>
+    <input type="text" id="add-salary" value="60000"> зарплата<br><br>
     <input type="submit" id="add" value="Нанять">
 </form>
 </body>
