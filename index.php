@@ -14,7 +14,7 @@ $result = $mysqli->query("SELECT * FROM `employees`");
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Трудоустройство</title>
-    <script src="ajax.js" defer></script>
+    <script src="add.js" defer></script>
     <script src="delete.js" defer></script>
 </head>
 <body>
