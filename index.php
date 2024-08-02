@@ -25,18 +25,18 @@ $result = $mysqli->query("SELECT * FROM `employees`");
             <h3><?= ($item['name']) ?> <?= ($item['surname']) ?></h3>
             <p>Должность: <?= ($item['position']) ?></p>
             <p>Зарплата: <?= ($item['salary']) ?></p>
+            <form method="post" enctype="multipart/form-data">
+                <input hidden type="text" class="update-name">
+                <input hidden type="text" class="update-surname">
+                <input hidden type="text" class="update-position">
+                <input hidden type="text" class="update-salary">
+                <input type="submit" class="update" value="Внести правки">
+            </form>
+            <br>
+            <form method="post" enctype="multipart/form-data">
+                <input type="submit" class="delete" value="Уволить" data-id="<?= ($item['id']) ?>">
+            </form>
         </li>
-        <form method="post" enctype="multipart/form-data">
-            <input hidden type="text" class="update-name">
-            <input hidden type="text" class="update-surname">
-            <input hidden type="text" class="update-position">
-            <input hidden type="text" class="update-salary">
-            <input type="submit" class="update" value="Внести правки">
-        </form>
-        <br>
-        <form method="post" enctype="multipart/form-data">
-            <input type="submit" class="delete" value="Уволить" data-id="<?= ($item['id']) ?>">
-        </form>
     <?php endforeach; ?>
 </ul>
 <h3>Нанять сотрудника</h3>

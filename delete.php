@@ -1,20 +1,21 @@
 <?php
 
-//header("Content-type: application/json");
+header("Content-type: application/json");
 $data = json_decode(file_get_contents('php://input'));
 
-//$fp = fopen('log.txt', 'a');
-//fwrite($fp, $data);
+
+$mysqli = new mysqli('127.0.0.1', 'root', '', 'employees');
 //
-//$mysqli = new mysqli('127.0.0.1', 'root', '', 'employees');
+
+$sql = "DELETE FROM `employees` WHERE id = {$data->id}";
+$fp = fopen('log.txt', 'a');
+fwrite($fp, $sql);
+
+//$mysqli->query($sql);
+
 //
-//$fp = fopen('log.txt', 'a');
-//fwrite($fp, $data);
-//
-//$mysqli->query("DELETE FROM `employees` WHERE id = {$data->id}");
-//
-//$response = [
-//    'id' => $data->id,
-//];
-//
-//echo json_encode($response);
+$response = [
+    'id' => $data->id,
+];
+
+echo json_encode($response);

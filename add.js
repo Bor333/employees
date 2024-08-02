@@ -26,6 +26,17 @@ addButton.onclick = function (event) {
             <h3>${answer.name} ${answer.surname}</h3>
             <p>Должность: ${answer.position}</p>
             <p>Зарплата: ${answer.salary}</p>
+            <form method="post" enctype="multipart/form-data">
+                <input hidden type="text" class="update-name">
+                <input hidden type="text" class="update-surname">
+                <input hidden type="text" class="update-position">
+                <input hidden type="text" class="update-salary">
+                <input type="submit" class="update" value="Внести правки">
+            </form>
+            <br>
+            <form method="post" enctype="multipart/form-data">
+                <input type="submit" class="delete" value="Уволить" data-id="<?= ($item['id']) ?>">
+            </form>
         </li>`
          document.querySelector("ul").insertAdjacentHTML("beforeend", newTitle);
     })();
