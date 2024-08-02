@@ -2,10 +2,15 @@ const addButton = document.getElementById('add');
 addButton.onclick = function (event) {
     event.preventDefault();
 
-    const name = document.getElementById('add-name').value;
-    const surname = document.getElementById('add-surname').value;
-    const position = document.getElementById('add-position').value;
-    const salary = document.getElementById('add-salary').value;
+    const nameEl = document.getElementById('add-name');
+    const name = nameEl.value;
+
+    const surnameEl = document.getElementById('add-surname');
+    const surname = surnameEl.value;
+    const positionEl = document.getElementById('add-position');
+    const position = positionEl.value;
+    const salaryEl = document.getElementById('add-salary');
+    const salary = salaryEl.value;
 
     (async () => {
         const response = await fetch('add.php', {
@@ -39,5 +44,9 @@ addButton.onclick = function (event) {
             </form>
         </li>`
          document.querySelector("ul").insertAdjacentHTML("beforeend", newTitle);
+        nameEl.value = null;
+        surnameEl.value = null;
+        positionEl.value = null;
+        salaryEl.value = null;
     })();
 }
