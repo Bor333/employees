@@ -21,7 +21,7 @@ $result = $mysqli->query("SELECT * FROM `employees`");
 <h1>Список сотрудников</h1>
 <ul>
     <?php foreach ($result as $item): ?>
-        <li style="list-style-type: none">
+        <li style="list-style-type: none" data-id="<?= ($item['id']) ?>">
             <h3><?= ($item['name']) ?> <?= ($item['surname']) ?></h3>
             <p>Должность: <?= ($item['position']) ?></p>
             <p>Зарплата: <?= ($item['salary']) ?></p>

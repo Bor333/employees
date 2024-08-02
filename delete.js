@@ -7,7 +7,6 @@ deleteButtonArr.forEach((deleteButton) => {
 
             (async () => {
                 const id = this.dataset.id;
-                console.log(id)
                 const response = await fetch('delete.php', {
                     method: 'POST',
                     headers: new Headers({
@@ -18,8 +17,9 @@ deleteButtonArr.forEach((deleteButton) => {
                     }), // body data type must match "Content-Type" header
                 });
                 const answer = await response.json();
+                // console.log(answer.id);
+                // const deletingTitle =   document.querySelector(`[data-id=""]`);
 
-                 console.log(answer);
             })();
         }
     }
