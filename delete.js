@@ -19,7 +19,6 @@ deleteButtonArr.forEach((deleteButton) => {
                 const answer = await response.json();
                 const deletingTitle =  document.querySelector(`[data-id="${answer.id}"]`);
                 deletingTitle.remove();
-
             })();
         }
     }

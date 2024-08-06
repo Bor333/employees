@@ -9,7 +9,8 @@ $mysqli = new mysqli('127.0.0.1', 'root', '', 'employees');
 
 $sql = "DELETE FROM `employees` WHERE id = {$data->id}";
 //$fp = fopen('log.txt', 'a');
-//fwrite($fp, $sql);
+//fwrite($fp, file_get_contents('php://input'));
+//die();
 
 $mysqli->query($sql);
 
