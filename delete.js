@@ -1,26 +1,26 @@
 const deleteButtonArr = document.querySelectorAll('.delete');
 
 deleteButtonArr.forEach((deleteButton) => {
-    {
-        deleteButton.onclick = function(event)  {
-            event.preventDefault();
-
-            (async () => {
-                const id = this.dataset.id;
-                const response = await fetch('delete.php', {
-                    method: 'POST',
-                    headers: new Headers({
-                        'Content-Type': 'application/json'
-                    }),
-                    body: JSON.stringify({
-                        id: id
-                    }), // body data type must match "Content-Type" header
-                });
-                const answer = await response.json();
-                const deletingTitle =  document.querySelector(`[data-id="${answer.id}"]`);
-                deletingTitle.remove();
-            })();
-        }
-    }
+        addDeleteButtonAction(deleteButton);
 });
 
+function addDeleteButtonAction(deleteButton) {
+    deleteButton.onclick = function deleteAction(event)  {
+        event.preventDefault();
+        (async () => {
+            const id = this.dataset.id;
+            const response = await fetch('delete.php', {
+                method: 'POST',
+                headers: new Headers({
+                    'Content-Type': 'application/json'
+                }),
+                body: JSON.stringify({
+                    id: id
+                }), // body data type must match "Content-Type" header
+            });
+            const answer = await response.json();
+            const deletingTitle = document.querySelector(`[data-id="${answer.id}"]`);
+            deletingTitle.remove();
+        })();
+    }
+}

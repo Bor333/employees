@@ -14,11 +14,12 @@ $result = $mysqli->query("SELECT * FROM `employees`");
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Сотрудники</title>
+    <script src="delete.js" defer></script>
     <script src="save.js" defer></script>
     <script src="update.js" defer></script>
     <script src="add.js" defer></script>
-    <script src="delete.js" defer></script>
     <link rel="icon" href="favicon.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>Список сотрудников</h1>
@@ -45,10 +46,10 @@ $result = $mysqli->query("SELECT * FROM `employees`");
 <h3>Нанять сотрудника</h3>
 <form method="post" enctype="multipart/form-data">
     <input hidden type="text" id="add-id">
-    <input type="text" id="add-name"> <label id="name-label">имя</label><br><br>
-    <input type="text" id="add-surname"> <label id="surname-label">фамилия</label><br><br>
-    <input type="text" id="add-position"> <label id="position-label">должность</label><br><br>
-    <input type="text" id="add-salary"> <label id="salary-label">зарплата</label><br><br>
+    <input type="text" id="add-name"><label id="name-label">имя</label><br><br>
+    <input type="text" id="add-surname"><label id="surname-label">фамилия</label><br><br>
+    <input type="text" id="add-position"><label id="position-label">должность</label><br><br>
+    <input type="text" id="add-salary"><label id="salary-label">зарплата</label><br><br>
     <input type="submit" id="add" value="Нанять">
 </form>
 </body>

@@ -13,7 +13,6 @@ addButton.onclick = function (event) {
     const salaryEl = document.getElementById('add-salary');
     const salary = salaryEl.value;
 
-    console.log(name.length);
 
     if (name.length < 3) {
         // nameEl.insertAdjacentHTML('afterend', 'Введите имя не меньше 3 символов');
@@ -24,8 +23,7 @@ addButton.onclick = function (event) {
         document.getElementById('position-label').textContent = 'Введите должность не меньше 3 символов';
     } else if (salary.length < 3) {
         document.getElementById('salary-label').textContent = 'Введите зарплату не меньше 3 символов';
-    }
-    else {
+    } else {
         (async () => {
             const response = await fetch('add.php', {
                 method: 'POST',
@@ -41,7 +39,7 @@ addButton.onclick = function (event) {
             });
             const answer = await response.json();
             //
-            const newTitle = `<li style="list-style-type: none">
+            const newTitle = `<li style="list-style-type: none" data-id="${answer.id}">
             <h3>${answer.name} ${answer.surname}</h3>
             <p>Должность: ${answer.position}</p>
             <p>Зарплата: ${answer.salary}</p>
@@ -54,7 +52,7 @@ addButton.onclick = function (event) {
             </form>
             <br>
             <form method="post" enctype="multipart/form-data">
-                <input type="submit" class="delete" value="Уволить" data-id="<?= ($item['id']) ?>">
+                <input type="submit" class="delete" value="Уволить">
             </form>
         </li>`
             document.querySelector("ul").insertAdjacentHTML("beforeend", newTitle);
@@ -62,6 +60,8 @@ addButton.onclick = function (event) {
             surnameEl.value = null;
             positionEl.value = null;
             salaryEl.value = null;
+            const addedTitle = document.querySelector(`[data-id="${answer.id}"]`);
+            addDeleteButtonAction(addedTitle);
         })();
     }
 
