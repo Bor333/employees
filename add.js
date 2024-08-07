@@ -1,6 +1,7 @@
 const addButton = document.getElementById('add');
 addButton.onclick = function (event) {
     event.preventDefault();
+
     const nameEl = document.getElementById('add-name');
     const name = nameEl.value;
 
@@ -39,7 +40,7 @@ addButton.onclick = function (event) {
             });
             const answer = await response.json();
             //
-            const newTitle = `<li style="list-style-type: none" data-id="${answer.id}">
+            const newTitle = `<li style="list-style-type: none" data-id="${answer.id}"> 
             <h3>${answer.name} ${answer.surname}</h3>
             <p>Должность: ${answer.position}</p>
             <p>Зарплата: ${answer.salary}</p>
@@ -52,7 +53,7 @@ addButton.onclick = function (event) {
             </form>
             <br>
             <form method="post" enctype="multipart/form-data">
-                <input type="submit" class="delete" value="Уволить">
+                <input type="submit" class="delete" value="Уволить" data-id="${answer.id}">
             </form>
         </li>`
             document.querySelector("ul").insertAdjacentHTML("beforeend", newTitle);
@@ -60,8 +61,11 @@ addButton.onclick = function (event) {
             surnameEl.value = null;
             positionEl.value = null;
             salaryEl.value = null;
-            const addedTitle = document.querySelector(`[data-id="${answer.id}"]`);
-            addDeleteButtonAction(addedTitle);
+
+             const addedTitle = document.querySelector(`[data-id="${answer.id}"]`);
+             const deleteButton = addedTitle.querySelector('.delete');
+             addDeleteButtonAction(deleteButton);
+            // addUpdateButtonAction(addedTitle);
         })();
     }
 

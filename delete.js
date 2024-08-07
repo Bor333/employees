@@ -1,11 +1,7 @@
 const deleteButtonArr = document.querySelectorAll('.delete');
 
-deleteButtonArr.forEach((deleteButton) => {
-        addDeleteButtonAction(deleteButton);
-});
-
-function addDeleteButtonAction(deleteButton) {
-    deleteButton.onclick = function deleteAction(event)  {
+addDeleteButtonAction = (deleteButton) => {
+    deleteButton.onclick = function (event) {
         event.preventDefault();
         (async () => {
             const id = this.dataset.id;
@@ -24,3 +20,8 @@ function addDeleteButtonAction(deleteButton) {
         })();
     }
 }
+
+deleteButtonArr.forEach((deleteButton) => {
+        addDeleteButtonAction(deleteButton);
+});
+
