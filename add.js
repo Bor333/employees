@@ -41,15 +41,15 @@ addButton.onclick = function (event) {
             const answer = await response.json();
             //
             const newTitle = `<li style="list-style-type: none" data-id="${answer.id}"> 
-            <h3>${answer.name} ${answer.surname}</h3>
-            <p>Должность: ${answer.position}</p>
-            <p>Зарплата: ${answer.salary}</p>
+            <h3><span class="item-name">${answer.name}</span><span class="item-surname"> ${answer.surname}</span></h3>
+            <p class="item-position">Должность: ${answer.position}</p>
+            <p class="item-salary">Зарплата: ${answer.salary}</p>        
             <form method="post" enctype="multipart/form-data">
                 <input hidden type="text" class="update-name">
                 <input hidden type="text" class="update-surname">
                 <input hidden type="text" class="update-position">
                 <input hidden type="text" class="update-salary">
-                <input type="submit" class="update" value="Внести правки">
+                <input type="submit" class="update" value="Внести правки" data-id="${answer.id}">
             </form>
             <br>
             <form method="post" enctype="multipart/form-data">
@@ -64,8 +64,9 @@ addButton.onclick = function (event) {
 
              const addedTitle = document.querySelector(`[data-id="${answer.id}"]`);
              const deleteButton = addedTitle.querySelector('.delete');
+             const updateButton = addedTitle.querySelector('.update');
              addDeleteButtonAction(deleteButton);
-            // addUpdateButtonAction(addedTitle);
+             addUpdateButtonAction(updateButton);
         })();
     }
 

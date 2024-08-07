@@ -1,6 +1,5 @@
 async function save() {
     const id = document.getElementById('add-id').value;
-    console.log(id)
     const name = document.getElementById('add-name').value;
     const surname = document.getElementById('add-surname').value;
     const position = document.getElementById('add-position').value;

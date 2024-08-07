@@ -17,8 +17,8 @@ $response = [
 $mysqli = new mysqli('127.0.0.1', 'root', '', 'employees');
 $sql = "UPDATE `employees` SET `name`='{$data->name}',`surname`='{$data->surname}',`position`='{$data->position}',`salary`='{$data->salary}' WHERE id = '{$data->id}'";
 
-$fp = fopen('log.txt', 'a');
-fwrite($fp, $sql);
+//$fp = fopen('log.txt', 'a');
+//fwrite($fp, $sql);
 
 $result = $mysqli->query($sql);
 

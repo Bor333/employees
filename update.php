@@ -39,7 +39,7 @@ $response = [
 
 //$str = $name . $surname . $position . $salary;
 //$fp = fopen('log.txt', 'a');
-//fwrite($fp, $str);
+//fwrite($fp, $data);
 //die();
 
 
