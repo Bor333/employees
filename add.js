@@ -42,8 +42,8 @@ addButton.onclick = function (event) {
             //
             const newTitle = `<li style="list-style-type: none" data-id="${answer.id}"> 
             <h3><span class="item-name">${answer.name}</span><span class="item-surname">${answer.surname}</span></h3>
-            <p class="item-position">Должность: ${answer.position}</p>
-            <p class="item-salary">Зарплата: ${answer.salary}</p>        
+            <p>Должность: <span class="item-position">${answer.position}</span></p>
+            <p>Зарплата: <span class="item-salary">${answer.salary}</span></p>        
             <form method="post" enctype="multipart/form-data">
                 <input hidden type="text" class="update-name">
                 <input hidden type="text" class="update-surname">

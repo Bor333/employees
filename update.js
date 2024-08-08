@@ -7,7 +7,6 @@ updateButtonArr.forEach((updateButton) => {
 function addUpdateButtonAction(updateButton) {
     updateButton.onclick = function (event) {
         event.preventDefault();
-        // document.getElementById('add-name').value = document.getElementById('add-name').value;
         (async () => {
             const id = this.dataset.id;
             const response = await fetch('update.php', {

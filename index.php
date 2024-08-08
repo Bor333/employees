@@ -29,8 +29,8 @@ $result = $mysqli->query("SELECT * FROM `employees`");
             <?php foreach ($result as $item): ?>
                 <li style="list-style-type: none" data-id="<?= ($item['id']) ?>">
                     <h3><span class="item-name"><?= ($item['name']) ?></span><span class="item-surname"><?= ($item['surname']) ?></span></h3>
-                    <p class="item-position">Должность: <?= ($item['position']) ?></p>
-                    <p class="item-salary">Зарплата: <?= ($item['salary']) ?></p>
+                    <p>Должность: <span class="item-position"><?= ($item['position']) ?></span></p>
+                    <p>Зарплата: <span class="item-salary"><?=  ($item['salary']) ?></span></p>
                     <form method="post" enctype="multipart/form-data">
                         <input hidden type="text" class="update-name">
                         <input hidden type="text" class="update-surname">

@@ -15,7 +15,6 @@ $mysqli = new mysqli('127.0.0.1', 'root', '', 'employees');
 $result = $mysqli->query("INSERT INTO `employees`(`name`, `surname`, `position`, `salary`)
 VALUES ('{$data->name}','{$data->surname}','{$data->position}', '{$data->salary}')");
 
-
 $response = [
     'id' => $mysqli->insert_id,
     'name' => $data->name,
