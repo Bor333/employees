@@ -9,8 +9,7 @@ $data = json_decode(file_get_contents('php://input'));
 
 //
 
-$mysqli = new mysqli('127.0.0.1', 'root', '', 'employees');
-
+$mysqli = getMysqli();
 
 $sql = "SELECT * FROM `employees` WHERE id = '{$data->id}'";
 $result = $mysqli->query($sql);

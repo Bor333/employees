@@ -6,8 +6,8 @@ $data = json_decode(file_get_contents('php://input'));
 //
 //
 //
+$mysqli = getMysqli();
 
-$mysqli = new mysqli('127.0.0.1', 'root', '', 'employees');
 
 //$fp = fopen('log.txt', 'a');
 //fwrite($fp, $data);

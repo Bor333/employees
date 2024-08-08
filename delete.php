@@ -4,7 +4,7 @@ header("Content-type: application/json");
 $data = json_decode(file_get_contents('php://input'));
 
 
-$mysqli = new mysqli('127.0.0.1', 'root', '', 'employees');
+$mysqli = getMysqli();
 //
 
 $sql = "DELETE FROM `employees` WHERE id = {$data->id}";

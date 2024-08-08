@@ -1,7 +1,6 @@
 <?php
-
-$mysqli = new mysqli('127.0.0.1', 'root', '', 'employees');
-
+include 'mysqli.php';
+$mysqli = getMysqli();
 $result = $mysqli->query("SELECT * FROM `employees`");
 
 
