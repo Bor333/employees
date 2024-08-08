@@ -26,7 +26,7 @@ function addUpdateButtonAction(updateButton) {
             document.getElementById('add-salary').value = answer.salary;
 
             const addHeading = document.getElementById('add-heading');
-            addHeading.textContent = 'Изменить';
+            addHeading.textContent = 'Редактировать';
 
             const addButton = document.getElementById('add');
             addButton.value = 'Сохранить';

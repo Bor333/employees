@@ -17,10 +17,10 @@ VALUES ('{$data->name}','{$data->surname}','{$data->position}', '{$data->salary}
 
 $response = [
     'id' => $mysqli->insert_id,
-    'name' => $data->name,
-    'surname' => $data->surname,
-    'position' => $data->position,
-    'salary' => $data->salary,
+    'name' =>  htmlspecialchars(strip_tags($mysqli->real_escape_string($data->name))),
+    'surname' => htmlspecialchars(strip_tags($mysqli->real_escape_string($data->surname))),
+    'position' => htmlspecialchars(strip_tags($mysqli->real_escape_string($data->position))),
+    'salary' => htmlspecialchars(strip_tags($mysqli->real_escape_string($data->salary))),
 ];
 
 header("Content-type: application/json");
