@@ -22,35 +22,41 @@ $result = $mysqli->query("SELECT * FROM `employees`");
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Список сотрудников</h1>
-<ul>
-    <?php foreach ($result as $item): ?>
-        <li style="list-style-type: none" data-id="<?= ($item['id']) ?>">
-            <h3><span class="item-name"><?= ($item['name']) ?></span><span class="item-surname"> <?= ($item['surname']) ?></span></h3>
-            <p class="item-position">Должность: <?= ($item['position']) ?></p>
-            <p class="item-salary">Зарплата: <?= ($item['salary']) ?></p>
-            <form method="post" enctype="multipart/form-data">
-                <input hidden type="text" class="update-name">
-                <input hidden type="text" class="update-surname">
-                <input hidden type="text" class="update-position">
-                <input hidden type="text" class="update-salary">
-                <input type="submit" class="update" value="Внести правки" data-id="<?= ($item['id']) ?>">
-            </form>
-            <br>
-            <form method="post" enctype="multipart/form-data">
-                <input type="submit" class="delete" value="Уволить" data-id="<?= ($item['id']) ?>">
-            </form>
-        </li>
-    <?php endforeach; ?>
-</ul>
-<h3>Нанять сотрудника</h3>
-<form method="post" enctype="multipart/form-data">
-    <input hidden type="text" id="add-id">
-    <input type="text" id="add-name"><label id="name-label">имя</label><br><br>
-    <input type="text" id="add-surname"><label id="surname-label">фамилия</label><br><br>
-    <input type="text" id="add-position"><label id="position-label">должность</label><br><br>
-    <input type="text" id="add-salary"><label id="salary-label">зарплата</label><br><br>
-    <input type="submit" id="add" value="Нанять">
-</form>
+<div class="main">
+    <div class="employees-list">
+        <h1>Список сотрудников</h1>
+        <ul>
+            <?php foreach ($result as $item): ?>
+                <li style="list-style-type: none" data-id="<?= ($item['id']) ?>">
+                    <h3><span class="item-name"><?= ($item['name']) ?></span><span class="item-surname"> <?= ($item['surname']) ?></span></h3>
+                    <p class="item-position">Должность: <?= ($item['position']) ?></p>
+                    <p class="item-salary">Зарплата: <?= ($item['salary']) ?></p>
+                    <form method="post" enctype="multipart/form-data">
+                        <input hidden type="text" class="update-name">
+                        <input hidden type="text" class="update-surname">
+                        <input hidden type="text" class="update-position">
+                        <input hidden type="text" class="update-salary">
+                        <input type="submit" class="update" value="Внести правки" data-id="<?= ($item['id']) ?>">
+                    </form>
+                    <br>
+                    <form method="post" enctype="multipart/form-data">
+                        <input type="submit" class="delete" value="Уволить" data-id="<?= ($item['id']) ?>">
+                    </form>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    <div class="add-employee">
+        <h3>Нанять сотрудника</h3>
+        <form method="post" enctype="multipart/form-data">
+            <input hidden type="text" id="add-id">
+            <input type="text" id="add-name"><label id="name-label">имя</label><br><br>
+            <input type="text" id="add-surname"><label id="surname-label">фамилия</label><br><br>
+            <input type="text" id="add-position"><label id="position-label">должность</label><br><br>
+            <input type="text" id="add-salary"><label id="salary-label">зарплата</label><br><br>
+            <input type="submit" id="add" value="Нанять">
+        </form>
+    </div>
+</div>
 </body>
 </html>
