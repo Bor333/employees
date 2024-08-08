@@ -41,7 +41,7 @@ addButton.onclick = function (event) {
             const answer = await response.json();
             //
             const newTitle = `<li style="list-style-type: none" data-id="${answer.id}"> 
-            <h3><span class="item-name">${answer.name}</span><span class="item-surname"> ${answer.surname}</span></h3>
+            <h3><span class="item-name">${answer.name}</span><span class="item-surname">${answer.surname}</span></h3>
             <p class="item-position">Должность: ${answer.position}</p>
             <p class="item-salary">Зарплата: ${answer.salary}</p>        
             <form method="post" enctype="multipart/form-data">

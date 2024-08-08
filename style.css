@@ -4,20 +4,20 @@ span#name-label {
 
 .main {
     display: flex;
-    /*flex-direction: column;*/
 }
 
 .employees-list {
-    /*display: flex;*/
-    width: 50%;
+    width: 55%;
 }
 
 .add-employee {
-    /*float: left;*/
-    width: 50%;
-    /*top: 30%;*/
-    /*right: 10%;*/
-    /*position:fixed;*/
-    /*overflow-y:scroll;*/
-    /*overflow-x:hidden;*/
+    width: 45%;
+}
+
+.input-label {
+    margin-left: 5px;
+}
+
+.item-surname {
+    margin-left: 5px;
 }
