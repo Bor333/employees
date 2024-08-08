@@ -24,7 +24,11 @@ function addUpdateButtonAction(updateButton) {
             document.getElementById('add-surname').value = answer.surname;
             document.getElementById('add-position').value = answer.position;
             document.getElementById('add-salary').value = answer.salary;
-            const addButton = document.getElementById('add')
+
+            const addHeading = document.getElementById('add-heading');
+            addHeading.textContent = 'Изменить';
+
+            const addButton = document.getElementById('add');
             addButton.value = 'Сохранить';
             addButton.onclick = function (event) {
                 event.preventDefault();

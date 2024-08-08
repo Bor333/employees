@@ -46,7 +46,7 @@ $result = $mysqli->query("SELECT * FROM `employees`");
         </ul>
     </div>
     <div class="add-employee">
-        <h2>Нанять сотрудника</h2>
+        <h2 id="add-heading">Нанять сотрудника</h2>
         <form method="post" enctype="multipart/form-data">
             <input hidden type="text" id="add-id">
             <p><input value="Борис" type="text" id="add-name">
